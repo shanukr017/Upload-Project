@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "hound": "^1.0.5",
+    "mongodb": "^5.0.1",
+    "mongoose": "^6.9.1",
+    "multer": "^1.4.5-lts.1",
+    "watcher": "^2.2.2"
+  }
+}

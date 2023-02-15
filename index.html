@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      *,body,html{
+    margin: 0;
+    padding: 0;
+    font-size: calc(0.7vw + 0.5rem);
+}
+.navbar{
+    margin-bottom: 4rem;
+}
+.head{
+    margin: 0 0 4rem 0;
+}
+ul{
+    background-color: black;
+    list-style: none;
+}
+a{
+    font-size: calc(1vw + 0.5rem);
+    text-decoration: none;
+    color: white;
+}
+li{
+    color: white;
+    padding: 1rem 1rem 1rem 1rem;
+    display: inline-block;
+}
+.gap{
+    padding-right: 2rem;
+}
+h1{
+    margin: 0 0 2rem 0;
+  }
+  .hei{
+    font-size: 30px;
+  }
+  .mks{
+    border-radius: 2rem;
+    background-color: black;
+    color: grey;
+  }
+  .mks:hover{
+    border-radius: 2rem;
+    background-color: black;
+    color: white;
+  }
+  .size-in{
+    margin-bottom: 0.5rem;
+    width: 5rem;
+    text-align: center;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+    <ul>
+      <li class="hei">|</li>  
+      <li><a href="/">Home</a></li>
+      <li class="hei">|</li>  
+      <li><a href="/index">Upload File</a></li>
+      <li class="hei">|</li>
+      <li><a href="/fetch">Fetch File</a></li>
+      <li class="hei">|</li>
+    </ul>
+  </div>
+    <h1 class="container">Select a File to Upload</h1>
+    <form action="/save" method="post" enctype="multipart/form-data">
+      <div class="mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Upload File</label
+        >
+        <input type="file" class="form-control" id="newFile" name="newFile" />
+      </div>
+      <div class="mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Enter 4 Digit Pin</label
+        >
+        <input type="text" class="form-control" id="pin" name="pin" maxlength="4"/>
+      </div>
+      <div class="input-group mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label gap"
+          >Select Format</label
+        >
+        <select class= "size-in" name="format" id="format">
+          <option value="pdf">PDF</option>
+          <option value="pptx">PPTX</option>
+          <option value="jpg">JPG</option>
+          <option value="png">PNG</option>
+        </select>
+      </div>
+      <button class="btn btn-primary mks" style="margin: 0 auto; display: block;">Upload</button>
+    </form>
+    <script>
+       var ctn = document.getElementById("newFile");
+       ctn.addEventListener("change",function(){
+        var name = ctn.value.split("fakepath")[1];
+        console.log(name);
+       })
+    </script>
+  </body>
+</html>
