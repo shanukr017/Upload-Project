@@ -61,6 +61,12 @@ h1{
     width: 5rem;
     text-align: center;
   }
+  .txt{
+    display: none;
+  }
+  .form-label{
+    font-weight: bold;
+  }
     </style>
   </head>
   <body>
@@ -73,6 +79,8 @@ h1{
       <li class="hei">|</li>
       <li><a href="/fetch">Fetch File</a></li>
       <li class="hei">|</li>
+      <li><a href="/list">List</a></li>
+     <li class="hei">|</li>
     </ul>
   </div>
     <h1 class="container">Select a File to Upload</h1>
@@ -81,33 +89,42 @@ h1{
         <label for="exampleFormControlInput1" class="form-label"
           >Upload File</label
         >
-        <input type="file" class="form-control" id="newFile" name="newFile" />
+        <input type="file" class="form-control" id="newFile" name="newFile" required/>
       </div>
       <div class="mb-3 container">
         <label for="exampleFormControlInput1" class="form-label"
           >Enter 4 Digit Pin</label
         >
-        <input type="text" class="form-control" id="pin" name="pin" maxlength="4"/>
+        <input type="text" class="form-control" id="pin" name="pin" maxlength="4" required/>
       </div>
-      <div class="input-group mb-3 container">
-        <label for="exampleFormControlInput1" class="form-label gap"
-          >Select Format</label
+        
+      <div class="mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Enter Password</label
         >
-        <select class= "size-in" name="format" id="format">
-          <option value="pdf">PDF</option>
-          <option value="pptx">PPTX</option>
-          <option value="jpg">JPG</option>
-          <option value="png">PNG</option>
-        </select>
+        <input type="password" class="form-control" id="pass" name="pass"/>
       </div>
+      <input type="text" class="form-control txt" id="format" name="format"/>
+      <input class="txt" type="text" id="emptytxt" name="ogFileName">
       <button class="btn btn-primary mks" style="margin: 0 auto; display: block;">Upload</button>
     </form>
+
     <script>
        var ctn = document.getElementById("newFile");
+       var mg = document.getElementById("emptytxt");
+       var cg = document.getElementById("format");
+       var setPin = document.getElementById("pin");
        ctn.addEventListener("change",function(){
-        var name = ctn.value.split("fakepath")[1];
-        console.log(name);
+        var tagName = ctn.value.split("fakepath")[1];
+        var typeName = tagName.split(".")[1]
+        // console.log(tagName);
+        // console.log(typeName);
+        cg.value = typeName;
+        mg.value = tagName;
+        //console.log(name);
        })
+       
+
     </script>
   </body>
 </html>

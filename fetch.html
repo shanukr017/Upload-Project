@@ -56,6 +56,13 @@ h1{
     background-color: black;
     color: white;
   }
+  .form-label{
+    font-weight: bold;
+  }
+  
+  .msg{
+    color: red;
+  }
       </style>
 </head>
 <body>
@@ -68,17 +75,34 @@ h1{
     <li class="hei">|</li>
     <li><a href="/fetch">Fetch File</a></li>
     <li class="hei">|</li>
+    <li><a href="/list">List</a></li>
+    <li class="hei">|</li>
   </ul>
 </div>
 </div>
+  <div class="container"><h1>Enter Details To Fetch file</h1></div>
+  <p class="msg container" id="msg"></p>
     <form action="/getPdf" method="post">
       <div class="mb-3 container">
         <label for="exampleFormControlInput1" class="form-label"
-          >Enter Your ID :</label
+          >Enter Your ID</label
         >
         <input type="text" class="form-control" id="valueFind" name="valueFind" />
       </div>
+      <div class="mb-3 container">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Enter Password</label
+        >
+        <input type="password" class="form-control" id="pass" name="pass" />
+      </div>
         <button class="btn btn-primary mks" style="display: block; margin: 0 auto;">Submit</button>
     </form>
+    <script>
+      var sendMsg = document.getElementById("msg");
+      setTimeout(function active(params) {
+        sendMsg.innerText = "";
+      },5000);
+      
+    </script>
 </body>
 </html>
