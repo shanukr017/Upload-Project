@@ -11,94 +11,15 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     /> 
-    <style>
-        *{
-          font-size: calc(0.8vw + 0.5rem);
-        }
-        *,body,html{
-    margin: 0;
-    padding: 0;
-    font-size: calc(0.7vw + 0.5rem);
-}
-.navbar{
-    margin-bottom: 4rem;
-}
-.head{
-    margin: 0 0 4rem 0;
-}
-ul{
-    background-color: black;
-    list-style: none;
-}
-a{
-    font-size: calc(1vw + 0.5rem);
-    text-decoration: none;
-    color: white;
-}
-li{
-    color: white;
-    padding: 1rem 1rem 1rem 1rem;
-    display: inline-block;
-}
-h1{
-    margin: 0 0 2rem 0;
-  }
-  .hei{
-    font-size: 30px;
-  }
-  .mks{
-    border-radius: 2rem;
-    background-color: black;
-    color: grey;
-  }
-  .mks:hover{
-    border-radius: 2rem;
-    background-color: black;
-    color: white;
-  }
-  .form-label{
-    font-weight: bold;
-  }
-  .av{
-    display: block;
-  }
-  .msg{
-    color: red;
-  }
-  .mg-table{
-    display: block;
-    margin: 0 auto;
-  }
-  .pd1{
-    width: 10rem;
-    padding: 0.3rem;
-    color: black
-  }
-  .pd2{
-    width: 20rem;
-    color: black
-  }
-  .pd3{
-    width: 25rem;
-    color: black;
-    text-align: center;
-  }
-  hr{
-  }
-      </style>
+    <link rel="stylesheet" href="../css/common.css">
 </head>
 <body>
   <div class="head">
-  <ul>
-    <li class="hei">|</li>  
-    <li><a href="/">Home</a></li>
-    <li class="hei">|</li>  
+  <ul>  
+    <li><a href="/">Home</a></li>  
     <li><a href="/index">Upload File</a></li>
-    <li class="hei">|</li>
     <li><a href="/fetch">Fetch File</a></li>
-    <li class="hei">|</li>
     <li><a href="/list">List</a></li>
-    <li class="hei">|</li>
   </ul>
 </div>
 <h1 class="container">List of File Uploaded</h1>
@@ -109,9 +30,10 @@ h1{
         <td class="pd3" style="background-color: #BFDCE5;">File Name</td>
     </tr>
     <% if(data.length!=0){ %>
-      <% for(var i=0; i<data.length; i++){ %>
+      <% var j =0; %>  
+      <% for(var i=data.length-1; i>=0; i--,j++){ %>
         <tr>
-          <td class="pd1" style="background-color: #BFDCE5;"><%= i+1 %></td>
+          <td class="pd1" style="background-color: #BFDCE5;"><%= j+1 %></td>
           <td class="pd2" style="background-color: #EEEEEE;"><%= data[i].keyNumber %></td>
           <td class="pd3" style="background-color: #BFDCE5;"><%= data[i].originalFileName %></td>
       </tr>
