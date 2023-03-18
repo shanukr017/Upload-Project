@@ -7,7 +7,7 @@ const multer = require('multer');
 const app = express();
 const ejs = require('ejs');
 const path = require('path');
-const storeData = require("./back/storeEntry");
+const storeData = require("./DB/storeEntry");
 const { log } = require('console');
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -60,7 +60,7 @@ app.get("/fetch",(req,res)=>{
     // var sendF = path.join(__dirname+"/fetch.html");
     // res.sendFile(sendF);
     var msgs = "";
-    res.render('nakli',{msgs});
+    res.render('fetch',{msgs});
 })
 
 app.post("/getPdf",async(req,res)=>{
@@ -81,7 +81,7 @@ app.post("/getPdf",async(req,res)=>{
     else{
         //res.send({authenthication:"failed",acknowledgment:"false"});
         var msgs = "Not Valid Credentials";
-        res.render('nakli',{msgs});
+        res.render('fetch',{msgs});
     }
 });
 
